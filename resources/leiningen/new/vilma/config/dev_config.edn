@@ -1,0 +1,14 @@
+{:in-dev true
+ :url "http://localhost:8080"
+ :domain "localhost"
+ :port 8080
+ :authentication {:secret-key "REPLACEMEPLEASEPLEASEREPLACESOON"}
+ :hashing {:secret-key "REPLACEMEPLEASEPLEASEREPLACESOON"}
+ :db {:dbtype "postgresql"
+      :dbname "{{name}}_dev"
+      :host "localhost"
+      :port "5432"
+      :user "server"
+      :password "password"
+      :ssl false
+      :sslfactory "org.postgresql.ssl.NonValidatingFactory"}}

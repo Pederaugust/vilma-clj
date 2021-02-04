@@ -1,0 +1,14 @@
+{:in-dev false
+ :url "your url"
+ :port 8080
+ :domain "spesielt-interessert.no"
+ :authentication {:secret-key "REPLACEMEPLEASEPLEASEREPLACESOON"}
+ :hashing {:secret-key "REPLACEMEPLEASEPLEASEREPLACESOON"}
+ :db {:dbtype "postgresql"
+      :dbname "{{name}}"
+      :host "host"
+      :port "port"
+      :user "user"
+      :password "password"
+      :ssl false
+      :sslfactory "org.postgresql.ssl.NonValidatingFactory"}}

@@ -1,0 +1,18 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/cljs"
+  "src/cljc"]
+
+ :dependencies
+ [[re-frame "1.1.2"]
+  [reagent "1.0.0"]]
+
+ :builds
+ {:app {:target :browser
+        :asset-path "/js"
+        :output-dir "resources/public/js"
+        :modules {:main {:entries [{{name}}.core]}}
+        :devtools {:before-load {{name}}.core/stop
+                   :after-load {{name}}.core/start
+                   :http-root "public"
+                   :http-port 8020}}}}
