@@ -168,7 +168,7 @@ Create a migration:
 lein migratus create add-something-table
 ```
 
-Migrations can be located in the src/migrations folder with two timestamped sql files.
+Migrations can be located in the resources/migrations folder with two timestamped sql files.
 
 When you are happy, migrate:
 
