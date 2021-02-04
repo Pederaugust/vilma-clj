@@ -121,17 +121,17 @@ Lets create the views first. (view/post.clj)
                 [ring.util.anti-forgery :refer [anti-forgery-field]]))
     
 (defn show [post]
-    [:div
-        [:h1 (:title post)]
-        [:p (:content post)]])
+    (layout [:div
+              [:h1 (:title post)]
+              [:p (:content post)]]))
 
 (defn new []
-    [:div
-        (form-to [:post "/post"]
-            (anti-forgery-field)
-            (text-field "title")
-            (text-area "content")
-            (submit-button "create post"))])
+    (layout [:div
+              (form-to [:post "/post"]
+                (anti-forgery-field)
+                (text-field "title")
+                (text-area "content")
+                (submit-button "create post"))]))
 ```
 
 And lastly we will use compojure for our routes, the file is called routes.clj and should look something like this:
