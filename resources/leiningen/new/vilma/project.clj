@@ -1,9 +1,9 @@
 (defproject {{name}} "0.1.0-SNAPSHOT"
   :min-lein-version "2.0.0"
   :dependencies [[buddy "2.0.0"]
-                 [compojure "1.6.1"]
                  [hiccup "1.0.5"]
                  [http-kit "2.3.0"]
+                 [com.fasterxml.jackson.core/jackson-core "2.12.1"]
 
                  [org.clojure/clojure "1.10.1"]
                  [org.clojure/core.async "1.1.587"]
@@ -13,7 +13,7 @@
                  [org.slf4j/slf4j-simple "1.7.5"]
 
                  [lambdaisland/ring.middleware.logger "0.5.1"]
-
+                 [metosin/reitit-middleware "0.5.12"]
                  [migratus "1.3.4"]
                  [migratus-lein "0.7.3"]
                  [ring/ring-anti-forgery "1.3.0"]
@@ -22,7 +22,7 @@
                  [ring-cors "0.1.13"]
                  [seancorfield/next.jdbc "1.0.409" :exclusions [org.clojure/tools.logging]]
                  [honeysql "1.0.444"]
-
+                 [metosin/reitit-ring "0.5.5"]
                  [yogthos/config "1.1.6" :exclusions [org.clojure/tools.logging]]]
 
 

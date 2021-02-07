@@ -43,8 +43,7 @@
     (:user (unsign-user (:value token)))
     false))
 
-(def backend (backends/jws {:secret secret-key
-                            :auth-fn logged-in-user}))
+(def backend (backends/jws {:secret secret-key}))
 
 
 (defn generate-salt []
@@ -66,10 +65,12 @@
 
 (defn new-user! [new-user]
   "Creates a new user"
-  (let [salt (generate-salt)
-        hash (encrypt-password (:password new-user) salt)
-        user (-> new-user
-                 (assoc ,,, :passwordsalt (codecs/bytes->hex salt))
-                 (assoc ,,, :passwordhash hash)
-                 (dissoc ,,, :password))]
-    (sql/insert! ds :users user)))
+  (if-not (model/user-from-email (:email new-user))
+    (let [salt (generate-salt)
+          hash (encrypt-password (:password new-user) salt)
+          user (-> new-user
+                   (assoc ,,, :passwordsalt (codecs/bytes->hex salt))
+                   (assoc ,,, :passwordhash hash)
+                   (dissoc ,,, :password))]
+      (sql/insert! ds :users user))
+    false))
